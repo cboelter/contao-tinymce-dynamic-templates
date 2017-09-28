@@ -1,0 +1,43 @@
+{
+  "name": "cboelter/contao-tinymce-dynamic-templates",
+  "description": "Provides a backend module to generate tinymce templates in the backend.",
+  "keywords": [
+    "contao",
+    "tinymce",
+    "templates"
+  ],
+  "type": "contao-module",
+  "homepage": "https://boelter.eu/",
+  "license": "LGPL-3.0+",
+  "authors": [
+    {
+      "name": "Christopher Bölter",
+      "email": "github@boelter.eu",
+      "homepage": "https://boelter.eu",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "contao/core": "^3.5.5",
+    "contao-community-alliance/composer-plugin": "~2.0"
+  },
+  "conflict": {
+    "contao/core": "3.4.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "Boelter": "src"
+    }
+  },
+  "extra": {
+    "contao": {
+      "symlinks": {
+        "contao-module": "system/modules/tinymce-dynamic-templates",
+        "contao-module/config/tinyMCEDynamicTemplate.php": "system/config/tinyMCEDynamicTemplate.php"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
