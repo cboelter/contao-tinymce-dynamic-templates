@@ -17,8 +17,8 @@ $GLOBALS['TL_DCA']['tl_dynamic_template'] = array
             'keys' => array
             (
                 'id' => 'primary',
-            )
-        )
+            ),
+        ),
     ),
 
     // List
@@ -27,14 +27,14 @@ $GLOBALS['TL_DCA']['tl_dynamic_template'] = array
         'sorting'           => array
         (
             'mode'        => 1,
-            'fields'      => array('selector'),
+            'fields'      => array('selector DESC', 'title'),
             'panelLayout' => 'filter;search,limit',
         ),
         'label'             => array
         (
             'fields'         => array('title', 'selector'),
             'format'         => '%s <span style="color:#b3b3b3;padding-left:3px">[Selektor: %s]</span>',
-            'group_callback' => array('Boelter\\DynamicTemplates\\Backend\\DataContainer\\DynamicTemplate', 'setGroup')
+            'group_callback' => array('Boelter\\DynamicTemplates\\Backend\\DataContainer\\DynamicTemplate', 'setGroup'),
         ),
         'global_operations' => array
         (
@@ -43,8 +43,8 @@ $GLOBALS['TL_DCA']['tl_dynamic_template'] = array
                 'label'      => &$GLOBALS['TL_LANG']['MSC']['all'],
                 'href'       => 'act=select',
                 'class'      => 'header_edit_all',
-                'attributes' => 'onclick="Backend.getScrollOffset()" accesskey="e"'
-            )
+                'attributes' => 'onclick="Backend.getScrollOffset()" accesskey="e"',
+            ),
         ),
         'operations'        => array
         (
@@ -52,7 +52,7 @@ $GLOBALS['TL_DCA']['tl_dynamic_template'] = array
             (
                 'label' => &$GLOBALS['TL_LANG']['tl_dynamic_template']['edit'],
                 'href'  => 'act=edit',
-                'icon'  => 'edit.gif'
+                'icon'  => 'edit.gif',
             ),
             'copy'   => array
             (
@@ -65,22 +65,22 @@ $GLOBALS['TL_DCA']['tl_dynamic_template'] = array
                 'label'      => &$GLOBALS['TL_LANG']['tl_dynamic_template']['delete'],
                 'href'       => 'act=delete',
                 'icon'       => 'delete.gif',
-                'attributes' => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm']
-                                . '\'))return false;Backend.getScrollOffset()"',
+                'attributes' => 'onclick="if(!confirm(\''.$GLOBALS['TL_LANG']['MSC']['deleteConfirm']
+                                .'\'))return false;Backend.getScrollOffset()"',
             ),
             'show'   => array
             (
                 'label' => &$GLOBALS['TL_LANG']['tl_dynamic_template']['show'],
                 'href'  => 'act=show',
-                'icon'  => 'show.gif'
-            )
-        )
+                'icon'  => 'show.gif',
+            ),
+        ),
     ),
 
     // Palettes
     'palettes' => array
     (
-        'default' => '{title_legend},title,selector;{content_legend},content;{inactive_legend},inactive'
+        'default' => '{title_legend},title,selector;{content_legend},content;{inactive_legend},inactive',
     ),
 
     // Fields
@@ -88,11 +88,11 @@ $GLOBALS['TL_DCA']['tl_dynamic_template'] = array
     (
         'id'       => array
         (
-            'sql' => "int(10) unsigned NOT NULL auto_increment"
+            'sql' => "int(10) unsigned NOT NULL auto_increment",
         ),
         'tstamp'   => array
         (
-            'sql' => "int(10) unsigned NOT NULL default '0'"
+            'sql' => "int(10) unsigned NOT NULL default '0'",
         ),
         'title'    => array
         (
@@ -101,7 +101,7 @@ $GLOBALS['TL_DCA']['tl_dynamic_template'] = array
             'search'    => true,
             'inputType' => 'text',
             'eval'      => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'),
-            'sql'       => "varchar(255) NOT NULL default ''"
+            'sql'       => "varchar(255) NOT NULL default ''",
         ),
         'selector' => array
         (
@@ -110,7 +110,7 @@ $GLOBALS['TL_DCA']['tl_dynamic_template'] = array
             'search'    => true,
             'inputType' => 'text',
             'eval'      => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'),
-            'sql'       => "varchar(255) NOT NULL default ''"
+            'sql'       => "varchar(255) NOT NULL default ''",
         ),
         'content'  => array
         (
@@ -119,7 +119,7 @@ $GLOBALS['TL_DCA']['tl_dynamic_template'] = array
             'search'    => true,
             'inputType' => 'textarea',
             'eval'      => array('mandatory' => true, 'rte' => 'tinyMCE'),
-            'sql'       => "text NOT NULL"
+            'sql'       => "text NOT NULL",
         ),
         'inactive' => array
         (
@@ -128,7 +128,7 @@ $GLOBALS['TL_DCA']['tl_dynamic_template'] = array
             'search'    => true,
             'inputType' => 'checkbox',
             'eval'      => array('tl_class' => 'w50'),
-            'sql'       => "char(1) NOT NULL default ''"
+            'sql'       => "char(1) NOT NULL default ''",
         ),
-    )
+    ),
 );
